@@ -61,7 +61,10 @@ function Index() {
           href={CHANNEL_URL}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => (window as any).fbq?.("track", "Lead")}
+          onClick={() => {
+            (window as any).fbq?.("track", "Subscribe");
+            (window as any).fbq?.("track", "Lead");
+          }}
           className="block w-full py-4 rounded-full font-bold text-base mb-5 transition-transform hover:scale-[1.02]"
           style={{ background: "linear-gradient(90deg,#00e676,#00c853)", color: "#001a0d", boxShadow: "0 8px 24px rgba(0,230,118,0.35)" }}
         >
